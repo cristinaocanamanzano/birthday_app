@@ -18,7 +18,7 @@ class Birthday < Sinatra::Base
   get '/birthday' do
     @name = session[:name]
     @day = session[:day]
-    @month = session [:month]
+    @month = session[:month]
     @birthday_calculator = BirthdayCalculator.new(@day, @month)
     erb(:birthday)
   end
