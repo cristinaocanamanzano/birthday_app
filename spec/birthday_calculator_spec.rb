@@ -17,9 +17,14 @@ describe BirthdayCalculator do
   end
 
   describe "#countdown" do
-    it "returns countdown for next birthday" do
+    it "returns countdown for next birthday when it is still this year" do
       Timecop.freeze(Time.parse('2 October'))
       expect(birthday_calculator.countdown).to eq 1
+    end
+
+    it "returns countdown for next birthday when it is next year" do
+        Timecop.freeze(Time.parse('6 October'))
+        expect(birthday_calculator.countdown).to eq 362
     end
   end
 end

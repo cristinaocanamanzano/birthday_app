@@ -42,7 +42,7 @@ feature "Birthday calculator result" do
       expect(page).to have_content("Your birthday is not today.")
     end
 
-    scenario "User sees countdown for next birthday" do
+    scenario "User sees countdown for next birthday when it is this year" do
       Timecop.freeze(Time.parse('3 October'))
       visit '/'
       expect(page).to have_content("What is your name?")
@@ -52,6 +52,18 @@ feature "Birthday calculator result" do
       page.select "October", :from => "month"
       click_button "Send"
       expect(page).to have_content("It will be in 2 day(s).")
+    end
+
+    scenario "User sees countdown for next birthday when it is next year" do
+      Timecop.freeze(Time.parse('3 October'))
+      visit '/'
+      expect(page).to have_content("What is your name?")
+      fill_in 'name', with: 'Cristina'
+      expect(page).to have_content("When is your birthday?")
+      fill_in 'day', with: '4'
+      page.select "October", :from => "month"
+      click_button "Send"
+      expect(page).to have_content("It will be in 364 day(s).")
     end
   end
 end

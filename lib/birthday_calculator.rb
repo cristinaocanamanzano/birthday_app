@@ -11,7 +11,7 @@ class BirthdayCalculator
   end
 
   def countdown
-    (birthday_date - today).to_i
+    birthday_already? ? 365 + days_difference : days_difference
   end
 
   private
@@ -23,4 +23,12 @@ class BirthdayCalculator
   def birthday_date
     Date.parse("#{@day} #{@month}")
   end
+
+  def days_difference
+    (birthday_date - today).to_i
+  end
+
+  def birthday_already?
+   birthday_date < today
+ end
 end
