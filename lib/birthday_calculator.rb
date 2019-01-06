@@ -7,10 +7,14 @@ class BirthdayCalculator
   end
 
   def birthday_today?
-    birthday_date == Date.today
+    birthday_date == today
   end
 
   private
+
+  def today
+    Date.today
+  end
 
   def birthday_date
     Date.parse("#{@day} #{@month}")
