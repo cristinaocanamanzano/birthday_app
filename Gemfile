@@ -11,3 +11,4 @@ end
 
 gem 'rubocop'
 gem 'sinatra'
+gem 'timecop'
