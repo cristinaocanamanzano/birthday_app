@@ -6,15 +6,13 @@ describe BirthdayCalculator do
 
   describe "#birthday_today?" do
     it "returns true if birthday is today" do
-      Timecop.freeze(Time.parse('3 October')) do
-        expect(birthday_calculator.birthday_today?).to be true
-      end
+      Timecop.freeze(Time.parse('3 October'))
+      expect(birthday_calculator.birthday_today?).to be true
     end
 
     it "returns false if birthday is not today" do
-      Timecop.freeze(Time.parse('2 October')) do
-        expect(birthday_calculator.birthday_today?).to be false
-      end
+      Timecop.freeze(Time.parse('2 October'))
+      expect(birthday_calculator.birthday_today?).to be false
     end
   end
 end

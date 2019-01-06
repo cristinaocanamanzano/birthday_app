@@ -1,5 +1,6 @@
 require 'spec_helper'
 require './app'
+require 'timecop'
 
 feature "Birthday calculator result" do
   scenario "User sees greeting and their name after filling out initial form" do
@@ -16,6 +17,7 @@ feature "Birthday calculator result" do
 
   context "User's birthday is today" do
     scenario "User sees a happy birthday wish" do
+      Timecop.freeze(Time.parse('3 October'))
       visit '/'
       expect(page).to have_content("What is your name?")
       fill_in 'name', with: 'Cristina'
