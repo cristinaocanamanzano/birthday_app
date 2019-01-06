@@ -1,13 +1,8 @@
 require 'spec_helper'
 require './app'
 
-feature "Initial form" do
-  scenario "User sees a greeting when they visit homepage" do
-    visit '/'
-    expect(page).to have_content("Hello!")
-  end
-
-  scenario "User sees a form and fills out their name and birthday date" do
+feature "Birthday calculator result" do
+  scenario "User sees greeting and their name after filling out initial form" do
     visit '/'
     expect(page).to have_content("What is your name?")
     fill_in 'name', with: 'Cristina'
@@ -16,5 +11,6 @@ feature "Initial form" do
     page.select "October", :from => "month"
     click_button "Send"
     expect(page).to have_current_path("/birthday")
+    expect(page).to have_content("Hey, Cristina!")
   end
 end
