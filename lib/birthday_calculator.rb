@@ -10,6 +10,10 @@ class BirthdayCalculator
     birthday_date == today
   end
 
+  def countdown
+    (birthday_date - today).to_i
+  end
+
   private
 
   def today

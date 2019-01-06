@@ -8,7 +8,9 @@
     <h1 style="text-align:center">Hey, <%= @name %>!</h1>
     <div>
       <% if @birthday_calculator.birthday_today? %>
-        <div>Happy birthday!</div>
+        Happy birthday!
+      <% else %>
+        Your birthday is not today. It will be in <%= @birthday_calculator.countdown %> day(s).
       <% end %>
     </div>
   </body>
