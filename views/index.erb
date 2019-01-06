@@ -7,8 +7,28 @@
   <body>
     <h1 style="text-align:center">Hello!</h1>
     <div style="text-align:center; line-height: 30px">
-      What is your name? <br>
-      What is your birthday?
+      <form>
+      What is your name?<br />
+      <input type="text" name="name"><br />
+      When is your birthday?<br />
+      Day: <input type="text" name="day">
+      Month: <select name="month">
+       <option value="january">January</option>
+       <option value="february">February</option>
+       <option value="march">March</option>
+       <option value="april">April</option>
+       <option value="may">May</option>
+       <option value="june">June</option>
+       <option value="july">July</option>
+       <option value="august">August</option>
+       <option value="september">September</option>
+       <option value="octover">October</option>
+       <option value="november">November</option>
+       <option value="december">December</option>
+      </select>
+      <br />
+      <input type="submit" value="Send">
+  </form>
     </div>
   </body>
 </html>
