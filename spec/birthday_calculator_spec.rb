@@ -10,5 +10,11 @@ describe BirthdayCalculator do
         expect(birthday_calculator.birthday_today?).to be true
       end
     end
+
+    it "returns false if birthday is not today" do
+      Timecop.freeze(Time.parse('2 October')) do
+        expect(birthday_calculator.birthday_today?).to be false
+      end
+    end
   end
 end
