@@ -11,7 +11,7 @@ class BirthdayCalculator
   end
 
   def countdown
-    birthday_already? ? 365 + days_difference : days_difference
+    birthday_already? ? days_difference_next_year : days_difference
   end
 
   private
@@ -30,5 +30,9 @@ class BirthdayCalculator
 
   def birthday_already?
    birthday_date < today
- end
+  end
+
+  def days_difference_next_year
+    365 + days_difference
+  end
 end
