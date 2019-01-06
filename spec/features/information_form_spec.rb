@@ -6,4 +6,10 @@ feature "Initial form" do
     visit '/'
     expect(page).to have_content("Hello!")
   end
+
+  scenario "User is asked about their name and date of birth" do
+    visit '/'
+    expect(page).to have_content("What is your name?")
+    expect(page).to have_content("What is your birthday?")
+  end
 end
